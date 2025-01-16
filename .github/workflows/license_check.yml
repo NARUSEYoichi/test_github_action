@@ -1,0 +1,43 @@
+name: license-check
+
+on:
+  pull_request:
+    branches:
+      #      devブランチのみで実施
+      - develop
+      - system_renewal
+    types: [ opened, synchronize ]
+jobs:
+  license-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: Upgrade pip
+        run: |
+          pip install --upgrade pip
+      - name: Install Poetry
+        run: |
+          pip install -r src/requirements.txt
+          pip install pip-licenses
+      - name: Run Licenses Check
+        run: >
+          pip-licenses
+          --with-system
+          --allow-only="
+            MIT License;
+            MIT;
+            BSD License;
+            Apache Software License;
+            Mozilla Public License 2.0 (MPL 2.0);
+            GNU Library or Lesser General Public License (LGPL);
+            GNU General Public License v2 or later (GPLv2+);
+            Python Software Foundation License;
+            Historical Permission Notice and Disclaimer (HPND);
+            3-Clause BSD License;
+            GNU Lesser General Public License v3 (LGPLv3);
+            zlib/libpng License;
+            BSD;
+            "
