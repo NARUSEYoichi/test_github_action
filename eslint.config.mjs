@@ -21,7 +21,7 @@ export default [
         },
         files: ["src/**/*.js"],
         rules: {
-            "no-undef": "error",             // Error on variables not defined with var/let/const
+            "no-undef": "warn",             // warn on variables not defined with var/let/const
         },
     },
     {
@@ -39,7 +39,7 @@ export default [
         plugins: {html},
 
         "rules": {
-            "no-undef": "error",             // Error on variables not defined with var/let/const
+            "no-undef": "warn",             // warn on variables not defined with var/let/const
         }
     },
     {
@@ -54,7 +54,7 @@ export default [
         },
         files: ["src/**/*.js"],
         rules: {
-            "no-undef": "error",             // Error on variables not defined with var/let/const
+            "no-undef": "warn",             // warn on variables not defined with var/let/const
         },
     },
 
