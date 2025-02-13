@@ -4,3 +4,14 @@ profile:
   name: qodana.recommended
 include:
   - name: CheckDependencyLicenses
+include:
+  - name: Eslint
+exclude:
+  - name: Eslint
+    paths:
+      - src/docs/_build/
+      - src/static/AdminLTE-master/
+      - src/static/admin/
+      - src/static/bootstrap-datepicker-1.9.0-dist/
+      - src/static/jazzmin/
+      - src/static/vendor/
