@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "eslint": "^9.20.0",
+    "eslint-plugin-autofix": "^2.2.0",
+    "eslint-plugin-html": "^8.1.2"
+  }
+}
