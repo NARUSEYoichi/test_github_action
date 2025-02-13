@@ -3,8 +3,6 @@ linter: jetbrains/qodana-js:2024.3
 profile:
   name: qodana.recommended
 include:
-  - name: CheckDependencyLicenses
-include:
   - name: Eslint
 exclude:
   - name: Eslint
