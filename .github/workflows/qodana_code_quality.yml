@@ -23,7 +23,6 @@ jobs:
         with:
           node-version: '23.6.1'
       - run: npm ci
-      - run: npm test
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.3
         with:

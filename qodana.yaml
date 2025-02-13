@@ -4,6 +4,7 @@ profile:
   name: qodana.recommended
 bootstrap: |
   npm install
+  eslint --debug
 include:
   - name: Eslint
 exclude:
