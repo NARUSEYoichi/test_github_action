@@ -15,13 +15,15 @@ jobs:
       pull-requests: write
       checks: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}  # to check out the actual pull request commit, not the merge commit
           fetch-depth: 0  # a full history is required for pull request analysis
       - uses: actions/setup-node@v4
         with:
           node-version: '23.6.1'
+      - run: npm ci
+      - run: npm test
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.3
         with:
